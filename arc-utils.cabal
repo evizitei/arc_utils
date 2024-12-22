@@ -4,20 +4,22 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 
-name:           ansi-colors
+name:           arc-utils
 version:        0.1.0.0
 description:    A simple ANSI color display program
 build-type:     Simple
 
-executable ansi-colors-exe
+executable arc-utils
   main-is: arc.hs
   other-modules:
-      Paths_ansi_colors
+      Paths_arc_utils
   hs-source-dirs:
       src
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      ansi-terminal
+      aeson
+    , ansi-terminal
     , base >=4.7 && <5
+    , bytestring
     , vector-sized
   default-language: Haskell2010

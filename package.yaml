@@ -1,14 +1,16 @@
-name: ansi-colors
+name: arc-utils
 version: 0.1.0.0
 description: "A simple ANSI color display program"
 
 dependencies:
+- aeson
+- bytestring
 - base >= 4.7 && < 5
 - ansi-terminal
 - vector-sized
 
 executables:
-  ansi-colors-exe:
+  arc-utils:
     main: arc.hs
     source-dirs: src
     ghc-options:
