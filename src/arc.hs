@@ -7,6 +7,7 @@ import GHC.TypeLits
 import qualified System.Console.ANSI as ANSI
 import Control.Monad (forM_)
 import Data.Vector.Sized (Vector)
+import Data.Maybe (fromMaybe)
 
 data Color = Black | Blue | Red | Green | Yellow | Grey | Pink | Orange | SkyBlue | Brown
   deriving (Show, Eq, Enum, Bounded, Ord)
@@ -18,6 +19,8 @@ data ColorGrid (m :: Nat) (n :: Nat) where
     ColorGrid :: (KnownNat m, KnownNat n) => Vector m (Vector n Color) -> ColorGrid m n
 
 
+intToColor :: Int -> Color
+intToColor n = fromMaybe Black $ lookup n $ zip [0..] [minBound..maxBound]
 
 toAnsiCode :: Color -> String
 toAnsiCode Black = "38;2;32;32;32"
