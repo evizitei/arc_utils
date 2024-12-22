@@ -58,7 +58,8 @@ printColoredSquare clr = do
 -- Main function
 main :: IO ()
 main = do
-    let fileInQuestion = "./data/grids/simple_grid.json"
+    --let fileInQuestion = "./data/grids/simple_grid.json"
+    let fileInQuestion = "./data/grids/big_grid.json"
     gridStr <- readFile fileInQuestion
     case jsonToColorGrid gridStr of
         Nothing -> putStrLn "Failed to parse grid"
