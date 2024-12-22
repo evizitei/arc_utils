@@ -1,0 +1,4 @@
+resolver: lts-21.25  # You can adjust this to a different LTS version if needed
+
+packages:
+- . 
