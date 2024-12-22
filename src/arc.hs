@@ -12,16 +12,16 @@ printColoredSquare (code, name) = do
 
 -- List of colors with their ANSI codes and names
 colors :: [ColorInfo]
-colors = [ ("30", "Black")       -- Standard black
-        , ("34", "Blue")         -- Standard blue
-        , ("31", "Red")          -- Standard red
-        , ("32", "Green")        -- Standard green
-        , ("33", "Yellow")       -- Standard yellow
-        , ("90", "Grey")         -- Bright black (grey)
-        , ("95", "Pink")         -- Bright magenta (pink)
-        , ("33;2", "Brown")      -- Yellow with lower intensity
-        , ("94", "Light Blue")   -- Bright blue
-        , ("93", "Orange")       -- Bright yellow
+colors = [ ("38;2;32;32;32", "Black")
+        , ("34", "Blue")         
+        , ("31", "Red")          
+        , ("32", "Green")        
+        , ("33", "Yellow")       
+        , ("90", "Grey")         
+        , ("95", "Pink")         
+        , ("38;2;139;69;19", "Brown")      
+        , ("38;2;135;206;235", "Light Blue")   
+        , ("38;5;208", "Orange")      
         ]
 
 -- Main function
