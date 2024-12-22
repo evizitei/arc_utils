@@ -5,6 +5,7 @@ description: "A simple ANSI color display program"
 dependencies:
 - base >= 4.7 && < 5
 - ansi-terminal
+- vector-sized
 
 executables:
   ansi-colors-exe:

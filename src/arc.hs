@@ -1,22 +1,21 @@
 {-# LANGUAGE DataKinds #-}
 {-# LANGUAGE GADTs #-}
 {-# LANGUAGE KindSignatures #-}
-{-# LANGUAGE TypeOperators #-}
 
 import GHC.TypeLits
 
 import qualified System.Console.ANSI as ANSI
 import Control.Monad (forM_)
+import Data.Vector.Sized (Vector)
 
 data Color = Black | Blue | Red | Green | Yellow | Grey | Pink | Orange | SkyBlue | Brown
   deriving (Show, Eq, Enum, Bounded, Ord)
 
-data Vec (n :: Nat) a where
-    VNil :: Vec 0 a
-    VCons :: a -> Vec n a -> Vec (n + 1) a
-
 data ColorRow (n :: Nat) where
-    ColorRow :: KnownNat n => Vec n Color -> ColorRow n
+    ColorRow :: KnownNat n => Vector n Color -> ColorRow n
+
+data ColorGrid (m :: Nat) (n :: Nat) where
+    ColorGrid :: (KnownNat m, KnownNat n) => Vector m (Vector n Color) -> ColorGrid m n
 
 
 
